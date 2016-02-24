@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .node {
+            box-sizing: border-box;
+            position: absolute;
+            border: 1px solid #999;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            top: 70px;
+            border-radius: 20px;
+        }
+        .node:after {
+            font-size: 20px;
+            font-family: Arial;
+            line-height: 40px;
+            color: #555;
+            content: attr(data-name);
+        }
+        .node .node:before {
+            content: ' ';
+            display: block;
+            position: absolute;
+            width: 1px;
+            height: 40.62257748px;
+            background-color: #999;
+            left: 0px;
+            top: 0px;
+        }
+        .node .node:last-child {
+            left: 40px;
+        }
+        .node .node:last-child:before {
+            transform: translate(-2px, -37.31128874px) rotate(-0.51914611rad);
+        }
+        .node .node:first-child {
+            left: -40px;
+        }
+        .node .node:first-child:before {
+            transform: translate(40px, -35.31128874px) rotate(0.51914611rad);
+        }
+        .R {
+            left: 200px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="render('shape1')">Shape 1</button>
+    <button onclick="render('shape2')">Shape 2</button>
+    <button onclick="render('shape3')">Shape 3</button>
+    <button onclick="render('shape4')">Shape 4</button>
+    <button onclick="render('shape5')">Shape 5</button>
+    <button onclick="render('shape6')">Shape 6</button>
+    <button onclick="render('none')">Clear</button>
+
+    <div id="react-root"></div>
+
+    <script src="./build/dom-diff.js"></script>
+</body>
+</html>
